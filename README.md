@@ -92,9 +92,23 @@
 - Bước 2: Vào setting thêm file git bash(Lên gg search)
 - Bước 3: Tìm hiểu các lệnh nhanh trong Terminal bằng cách vào trong settings và vào mục action
 
-### \*\* Bài 2: Cài đặt Unbuto với WSL 1
+### **Bài 2: Cài đặt Unbuto với WSL 1**
 
 - Đây là công cụ của microsoft, giúp bạn có thể cài đặt và chạy được hệ điều hành Unbuto trên chính hệ điều hành Window
 - Lên mạng search Window Subsystem for Linux
 
 - uname -a (Hiển thị số phiên bản của hệ điều hành)
+
+### **Bài 3: Update, Upgrade Packages** 
+
+- Package hiểu đơn giản là các phần mềm được đóng gói lại
+- Update/ Uprade: Nâng câp ứng dụng
+- Câu lệnh Update: sudo apt update (Nó vào internet và tìm lấy thông tin phiên bản, package mới nhất về chứ chưa thực hiện nâng cấp lên)
+- Câu lệnh Upgrade: sudo apt upgrade (Sau khi đã update thì sử dụng câu lệnh này để quá trình cài đặt được diên ra dựa trên phiên bản mà câu lệnh update tìm thấy)
+- Chạy 2 câu lệnh này khi ta mới nhận được một máy chủ ubuntu hoặc khi mới cài đặt xong WSL
+
+* Trong Ubuntu nó có thư mục /etc/apt/sources.list (Nó chứa thông tin về  gói)
+* Khi chạy câu lệnh update thì nó sẽ tìm các package từ nhiều nguồn khac nhau
+* Cách xem etc/apt/sources.list: cat etc/apt/sources.list (Hiển thị nội dung file ra terminal)
+
+* Câu lệnh tải xuống và cài đặt một package: sudo apt install [ten_package]
