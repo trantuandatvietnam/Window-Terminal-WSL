@@ -117,7 +117,7 @@
 - Cần hiểu mnt là thư mục ổ  C, D (Chứa cả thư mục của window) (Nếu sử  dụng WSL)
 - home: là thư mục chứa account
 - Muốn đi vào thư mục chứa dữ liệu trong máy tính của mình thì chỉ cần gõ `cd` hoặc quay về  thư mục root bằng lệnh `cd /` rồi đi tới `cd home` rồi từ home đi vào tài khoản của mình.
-- Trong trường hợp trong folder chỉ có một file/folder duy nhất thì khi bấm `tab tab` nó sẽ tự đi tới file/thư mục đó
+- Trong trường hợp trong folder chỉ có một folder duy nhất thì khi bấm `tab tab` nó sẽ tự đi tới thư mục đó
 1. ls
 - Giúp quan sát bên trong một thư mục xem nó có gì (Quan sát bên trong thư mục mà terminal đang trỏ tới)
 - ls: Hiển thị tất cả các file/folder (không ẩn)
@@ -140,9 +140,41 @@ bắt đầu bằng `ng`)
 thì lúc đó đường dẫn hiện tại sẽ là `/WorkSpace/git/myProject`. Lúc này gõ `cd -` thì nó sẽ quay lại đường dẫn `/WorkSpace`
 - Muốn quay về  thư mục gốc (Root) thì sử  dụng `cd /`
 
-1. clear
+3. clear
 - Dọn dẹp nội dung cũ đang được hiển thị tại terminal
 
 Lưu ý: 
   - Khi làm việc với terminal là phải xác định dùng câu lệnh để  đạt được điều mình mong muốn
   - Cần nắm và hiển rõ những thông tin trên terminal
+
+4. Lệnh `mkdir` (Make directory)
+- Cú pháp `mkdir ten_folder`
+- Khi có nhu cầu tạo ra các thư mục
+- Đang đứng ở thư mục nào mà sử  dụng lệnh này thì nó sẽ tạo folder bên trong thư mục đó (Lưu ý: mỗi thư mục cách nhau bằng ` ` nếu muốn tạo nhiều thư mục một lúc)
+- Xóa thư mục `rmdir ten_folder_bi_xoa` (remove directory): Lưu ý là phải đứng bên ngoài file cần xóa(Hiểu là tại nơi tại nó) </br>
+Câu lệnh trên chỉ xóa được một thư mục trống
+- Tạo thư mục có nhiều cấp theo cú pháp `mkdỉr parent/children1/children2`, tuy nhiên để  tạo được cấp con thì tất cả các cấp trước nó phải được tồn tại
+- Muốn xóa một phát cả folder (Bao gồm các cấp con của nó) thì dùng lệnh `rm -r ten_cap_cha`
+- Muốn tạo một phát một folder nhiều cấp thì ta sử  dụng `mkdỉr parent/children1/children2/... -p` (Tham số  p này có thể  đặt ở dầu hoặc ở cuối cũng được nha)
+
+5. Lệnh `touch ten_file`
+- Câu lệnh này đơn thuần chỉ tạo ra một file(Không hỗ  trợ thêm nội dung file)
+- Để  xóa một file: `rm ten_file`
+- Để  tạo một file trong folder nhiều cấp VD: parent/children1/children2/children3/.../index.html
+  + Bước 1: Tạo folder nhiều cấp (bằng cách sử dụng -p)
+  + Bước 2: Dùng touch để  tạo file
+
+6. Lệnh `vi` (vim)
+- Nó là một editer được cài mặc định trên hệ điều hành Unix
+- Vào terminal gõ `vi` => Nó sẽ truy cập vào vim của máy (Làm theo hướng dẫn để  thoát vim (:q enter))
+- Sử  dụng vim để  tạo file: `vi ten_file` => Nó sẽ bật chế  độ editor
+  + Khi mới đầu vào thì vim sẽ mặc định ở chế  độ normal mode
+  + Để  viết ở chế  độ Intrust => Cần gõ `i`
+  + Để  thoát khỏi chế  độ Intrush => ESC
+  + Để  chỉnh sửa lại file ta sử  dụng: Di chuyển con trỏ chuột đến nơi cần chỉnh sửa rôi nhấn `i` để  vào chế  độ chỉnh sửa 
+  + Thoát khỏi vim mà không lưu file: `:q!` 
+  + Thoát và lưu file `:w`
+  + Lưu ý: Nếu muốn thoát thì ta cần trở lại chế  độ normal mode bằng cách nhấn phím ESC
+  + Để  đồng thời vừa lưu vừa thoát, ta sử  dụng `:wq` hoặc `:x`
+  + Tự tìm hiểu trên mạng
+  + Lưu ý: Nếu không mở được chế  độ Insert của vim thì cần cài đặt lại vim nhé, lên google mà tìm hiểu
