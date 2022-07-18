@@ -107,8 +107,42 @@
 - Câu lệnh Upgrade: sudo apt upgrade (Sau khi đã update thì sử dụng câu lệnh này để quá trình cài đặt được diên ra dựa trên phiên bản mà câu lệnh update tìm thấy)
 - Chạy 2 câu lệnh này khi ta mới nhận được một máy chủ ubuntu hoặc khi mới cài đặt xong WSL
 
-* Trong Ubuntu nó có thư mục /etc/apt/sources.list (Nó chứa thông tin về  gói)
+* Trong Ubuntu nó có thư mục `/etc/apt/sources.list` (Nó chứa thông tin về  gói)
 * Khi chạy câu lệnh update thì nó sẽ tìm các package từ nhiều nguồn khac nhau
-* Cách xem etc/apt/sources.list: cat etc/apt/sources.list (Hiển thị nội dung file ra terminal)
+* Cách xem `etc/apt/sources.list:` `cat etc/apt/sources.list `(Hiển thị nội dung file ra terminal)
 
 * Câu lệnh tải xuống và cài đặt một package: sudo apt install [ten_package]
+
+### **Bài 4: Các lệnh cơ bản trong Linux**
+- Cần hiểu mnt là thư mục ổ  C, D (Chứa cả thư mục của window) (Nếu sử  dụng WSL)
+- home: là thư mục chứa account
+- Muốn đi vào thư mục chứa dữ liệu trong máy tính của mình thì chỉ cần gõ `cd` hoặc quay về  thư mục root bằng lệnh `cd /` rồi đi tới `cd home` rồi từ home đi vào tài khoản của mình.
+- Trong trường hợp trong folder chỉ có một file/folder duy nhất thì khi bấm `tab tab` nó sẽ tự đi tới file/thư mục đó
+1. ls
+- Giúp quan sát bên trong một thư mục xem nó có gì (Quan sát bên trong thư mục mà terminal đang trỏ tới)
+- ls: Hiển thị tất cả các file/folder (không ẩn)
+- Muốn hiển thị tất cả các file/folder (không ẩn) một các detail hơn thì gõ lệnh: `ls -l` (Nó sẽ hiển thị ra thời gian, người tạo, ...)
+- Lưu ý: Lệnh `ls` và `ls -l` chỉ giúp ta nhìn thấy các file KHÔNG ở trạng thái ẩn (Những file/thư mục ở trạng thái ẩn trong Ubuntu được bắt đầu bằng dấu .)
+- Muốn nhìn được tất các file/folder (Bao gồm file/folder ẩn) thì sử  dụng `ls -a` (a ở đây hiểu là all)
+- Nhìn chi tiết tất cả các file/folder (bao gồm cả ẩn) => `ls -la` hoặc `ls -al` cũng như nhau
+- Sử  dụng `ls -R` để  nhìn thấy thấy cả mọi file/folder (bao gồm cả cấp con của các cấp con, ...)
+2. cd (Viết tắt của change directory)
+- Giúp di chuyển qua lại giữa các thư mục khác nhau
+- Gõ câu lệnh cd sau đó bấm tab 2 lần thì nó sẽ hiển thị tất cả thư mục bên trong (Cả file/thư mục ẩn)
+- Nếu cd tab mà không ra thì chứng tỏ có nhiều file được bắt đầu bằng chữ cái đã ghi (VD `cd ng + tab` => Có nhiều file </br>
+bắt đầu bằng `ng`)  
+
+=> Sử  dụng thêm tab tab để  xem có những file nào bắt đầu bằng `ng`
+- Khi sử  dụng cd phải đi qua từng cấp, không được nhảy cóc đến cấp con của thư mục đang trỏ luôn
+- Sử  dụng `cd ..` là quay lại một cấp, `cd../..` là quay lại 2 cấp, `cđ ../../../` là quay lại 3 cấp, tương tự như vậy cho nhiều cấp
+- Muốn đi một phát tới thư mục cọn của thư mục thì ta đi từng mục, mỗi mục ngăn cách bởi `/` VD: `WorkSpace/git/myProject`
+- Muốn quay lại directory gần nhất(Trước khi thực hiện lệnh cd) thì gõ `cd -`. Ví dụ thư mục đang là `/WorkSpace` ta sử  dụng `cd git/myProject` </br>
+thì lúc đó đường dẫn hiện tại sẽ là `/WorkSpace/git/myProject`. Lúc này gõ `cd -` thì nó sẽ quay lại đường dẫn `/WorkSpace`
+- Muốn quay về  thư mục gốc (Root) thì sử  dụng `cd /`
+
+1. clear
+- Dọn dẹp nội dung cũ đang được hiển thị tại terminal
+
+Lưu ý: 
+  - Khi làm việc với terminal là phải xác định dùng câu lệnh để  đạt được điều mình mong muốn
+  - Cần nắm và hiển rõ những thông tin trên terminal
