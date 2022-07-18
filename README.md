@@ -118,7 +118,7 @@
 - home: là thư mục chứa account
 - Muốn đi vào thư mục chứa dữ liệu trong máy tính của mình thì chỉ cần gõ `cd` hoặc quay về  thư mục root bằng lệnh `cd /` rồi đi tới `cd home` rồi từ home đi vào tài khoản của mình.
 - Trong trường hợp trong folder chỉ có một folder duy nhất thì khi bấm `tab tab` nó sẽ tự đi tới thư mục đó
-1. ls
+1. Lệnh `ls`
 - Giúp quan sát bên trong một thư mục xem nó có gì (Quan sát bên trong thư mục mà terminal đang trỏ tới)
 - ls: Hiển thị tất cả các file/folder (không ẩn)
 - Muốn hiển thị tất cả các file/folder (không ẩn) một các detail hơn thì gõ lệnh: `ls -l` (Nó sẽ hiển thị ra thời gian, người tạo, ...)
@@ -126,7 +126,7 @@
 - Muốn nhìn được tất các file/folder (Bao gồm file/folder ẩn) thì sử  dụng `ls -a` (a ở đây hiểu là all)
 - Nhìn chi tiết tất cả các file/folder (bao gồm cả ẩn) => `ls -la` hoặc `ls -al` cũng như nhau
 - Sử  dụng `ls -R` để  nhìn thấy thấy cả mọi file/folder (bao gồm cả cấp con của các cấp con, ...)
-2. cd (Viết tắt của change directory)
+2. Lệnh `cd `(Viết tắt của change directory)
 - Giúp di chuyển qua lại giữa các thư mục khác nhau
 - Gõ câu lệnh cd sau đó bấm tab 2 lần thì nó sẽ hiển thị tất cả thư mục bên trong (Cả file/thư mục ẩn)
 - Nếu cd tab mà không ra thì chứng tỏ có nhiều file được bắt đầu bằng chữ cái đã ghi (VD `cd ng + tab` => Có nhiều file </br>
@@ -140,7 +140,7 @@ bắt đầu bằng `ng`)
 thì lúc đó đường dẫn hiện tại sẽ là `/WorkSpace/git/myProject`. Lúc này gõ `cd -` thì nó sẽ quay lại đường dẫn `/WorkSpace`
 - Muốn quay về  thư mục gốc (Root) thì sử  dụng `cd /`
 
-3. clear
+3. Lệnh `clear`
 - Dọn dẹp nội dung cũ đang được hiển thị tại terminal
 
 Lưu ý: 
@@ -178,3 +178,127 @@ Câu lệnh trên chỉ xóa được một thư mục trống
   + Để  đồng thời vừa lưu vừa thoát, ta sử  dụng `:wq` hoặc `:x`
   + Tự tìm hiểu trên mạng
   + Lưu ý: Nếu không mở được chế  độ Insert của vim thì cần cài đặt lại vim nhé, lên google mà tìm hiểu
+
+7. Lệnh `cat` (concatenate)
+- Xem nội dung của file (In ra theo tiêu chuẩn stout - standoutput)
+- Ghép nội dung của nhiều file vào một file duy nhất: `cat file1 file2 ...` (Câu lệnh này chỉ giúp ghép trên stout)
+- Để  ghép và ghi nhiều file vào một file ta làm như sau: `cat file1 file2 ... > ghep-file.html`
+  + Nếu viết như trên thì mặc định nó sẽ tạo một file có tên là `ghep-file.html` trong thư mục mà ta đang trỏ vào
+
+8. Lệnh echo
+- Lệnh này nó in ra stout luôn, nếu chữ có nhiều từ thì cho nó vào dâu `""`
+- Lưu ý: Cái gì mà có đầu ra là stout thì đều có thể  ghi một file có nội dung một cách nhanh chóng `echo "Xin chào anh em F8" > test-file.html`
+- Trường hợp mình viết 2 hoặc nhiều câu lệnh có đầu ra cùng một file thì nội dung sẽ bị ghi đè
+- Nếu không muốn ghi đè thì thay thế  `>` thành `>>`, lúc này sau mỗi câu lệnh có nội dung giống nhau hoặc khác nhau(Có cùng file đầu ra thì nó sẽ tạo ra một dòng mới tại file đó)
+
+8. `tail duong_dan_file` Xem dòng nội dung mới nhất
+- Nó sẽ in ra theo stout mặc định 10 dòng gần nhất
+- Có thể  kiểm soát số  dòng được in ra như sau: `tail -n so_dong duong_dan_file`
+  + VD: `tail -n 2 test-file.html`
+- Xem thêm tham số  được hỗ  trợ trong tail bằng cách: `tail --help`
+- `tail -f duong_dan`: Dùng lệnh này để  theo dõi file, mỗi khi nó có sự thay đổi thì sẽ in ra sự thay đổi đó
+  + Cách thoát: `Ctr + - C`
+- Được dùng trong trường hợp nào mà bạn muốn follow một file(Giả sử  follow file log lỗi) => Dùng `Ctr C` để  thoát theo dõi
+- Dùng `Ctr Shift W` để  thoát cái terminal nhanh
+
+9. `grep`
+- Dùng để  lọc, tìm kiếm một từ xuất hiện trong stout 
+- Cú pháp: `cat concat.html | grep tuandat` => Nó sẽ vào file concat.html và tìm chữ nào có tên là `tuandat` </br>
+Nếu muốn tìm nhiều từ thì thêm nôi dung trong dấu ngoặc kép
+- Tìm kiếm từ trong nhiều file bằng cú pháp: `cat test.html test-file.html | grep "Đạt"`
+
+10. Lệnh `cp`
+- Sử  dụng khi coppy file hoăc thư mục
+- Cú pháp: `cp duong_dan_file_duoc_coppy duong_dan_file_coppy`
+- Vd: `cp index.html index-coppy.html`
+- Vd: `cp index.html my-folder/` => Lúc này tên file coppy sẽ được giữ nguyên và nằm trong `my-folder`
+- Nêu muốn coppy sang một folder khác và đổi tên nó thì làm như sau:  Vd: `cp index.html my-folder/index-coppt.html`
+- Hướng dẫn coppy folder: `cp -r duong_dan_folder_name duong_dan_folder_name2`
+- VD: `cp index.html /home/` => Lỗi ủy quyền => Cần thực thi dưới quyền root hoặc được ủy quyền bằng cách sử  </br>
+dụng sudo `sudo cp index.html /home/`
+
+11. Lệnh `mv` (move)
+- Sử  dụng để  di chuyển, đưa file hoặc thư mục này sang file hoặc thư mục khác hoặc dùng để  đổi tên
+- VD: `mv file.html new-file.html` => Bản chất là nó đổi vị trí thư mục chứa file, tuy nhiên do 2 file được trỏ cùng một đường dẫn => Nó thực hiện đổi tên
+- Tương tự, sử  dụng sudo nếu muốn di chuyển vào thư mục home
+
+12. Lệnh `rm` (remove)
+- Dùng để  xóa file
+- `rm index.html` Xóa file index.html tại thư mục đang đứng
+- Xóa đồng thời nhiều file: `rm index1.html index2.html ...`
+- Tuy nhiên câu lệnh này lại không thể  xóa folder
+- Sử  dụng `rmdỉr folder_dictionary` để  xóa folder, tuy nhiên nó chỉ xóa được folder trống thôi, folder chứa file thì không 
+- Sử  dụng `rm -r folder_dictionary` để  xóa folder và cả nội dung bên trong nó
+- Xóa một file trong home thì cần thêm sudo để  ủy quyền cho nó: VD: `sudo rm home/index.html`
+
+13. Lệnh `sudo` (Supper User Do)
+- Làm việc gì đó dưới vai trò của một Supper User, đây là tài khoản người dùng có thể  làm những việc mà tài khoản người dùng bình thường không làm được </br>
+Ví dụ như phân quyền hạn hoặc can thiệp sâu vào hệ thống tệp nằm trong hệ điều hành 
+- `sudo touch /home/index.js`: Tạo file index.html trong sudo
+
+14. Lệnh `chmode` (Change mode" Thay đổi chế  độ)
+- Dùng để  phân quyền hạn cho thư mục và file
+- Trong Ubuntu có 3 vai trò
+  + Chủ sở hữu (Owner): Đây là người dùng cụ thể
+  + Nhóm sở hữu: (Group): Một nhóm lại có nhiều nguòi
+  + Những người còn lại(Everyone)
+- Xem thông tin thư mục gốc: `ls -l /`
+- Ví dụ: 1 root(1) root(2)
+  + Vị trí thứ (1) là Owner 
+  + Vị trí thứ (2) là thư nhóm sở hữu
+  + Nhìn vào cột thứ nhất
+    + Nếu bắt đầu bằng chữ D thì đó là một folder
+    + Bắt đầu bằng dấu `-r` thì đó là một file
+    + Bắt đâu bằng chữ `l` thì đó là một shortcut
+  
+- Có 3 quyền khi truy cập:
+  + Read
+  + Write
+  + execute
+- Ta có file ghi như sau: l rwx rwx rwx 
+  + 3 kí tự đầu tên thể  hiện quyền hạn cho nhóm Owner
+  + 3 kí tự tiếp theo thể  hiện quyền hạn cho nhóm Group
+  + 3 kí tự tiếp theo thể  hiện quyền hạn cho nhóm Other
+  + Chữ `r` thể  hiện quyền đọc, chữ `w` thể  hiện quyền ghi và chữ `x` thể  hiện quyền execute
+  + Dấu `-` nghĩa là không có gì
+
+- Cú pháp của lệnh `chmod`: `chmod options permissions file name`
+  - Options: -R (Recursive(Đệ quy)) => Phân quyền cho tất cả thư mục và file
+  - Permissions: 
+    + Cách 1: Thể  hiện bằng hệ số  bát phân (Từ 0 - 7)
+      + 4 là quyền read
+      + 2 là quyền write
+      + 1 là execute
+      + 0 là không có quyền gì cả
+      + Full quyền là số  7 vì 4 + 3 + 2 = 7, đọc và ghi sẽ là 4 + 2 = 6 (Quy tắc là cộng các quyền vào thôi)
+      + Set full quyền cho tất cả: `sudo chmod 777 index.html` => Có nghĩa là set full quyền cho 3 thằng user(owner) group và other
+      + Set cho user(owner) là full quyền, user(owner) đọc và execute và ông other là full quyền `udo chmod 757 index.html`
+      + Khi nào sử  dụng sudo cho hợp lý: Khi biết thực sự dòng lệnh dùng tài khoản root (Ví dụ như chmod buộc phải dùng root => Cần sudo), Thông </br>
+  thường khi tải file trên mạng về  mà không nó dùng dòng lệnh có sudo thì phải xem dòng lệnh đó có thực sự cần sử  dụng sudo không nhá
+      + Giả sử  ta gõ lệnh sau: `vi run.sh` sau đó bật chế  độ insert và ghi vào file trong dó sau đó thoát ra. Để  chạy file.sh ta cần làm như sau: </br>
+  chạy lệnh `./run.sh` sẽ gặp một lỗi là quyền bị từ chối do mình đang là tài khoản thuộc other, lúc này ta sẽ check quyền bằng cách sử  dụng lệnh `ls -l` để  xem quyền và bổ  sung quyền thực thi cho nó
+    + Cách 2: Dùng kí tự(r - read, w - write, x - execute)
+      + VD: `chmod u=rwx, g=rx, o = r, myFile` (Chữ u - Owner, g - Group, o - Other, a - All, myFile là file bị phân quyền)
+        + Dấu `=` thể  hiện gán trực tiếp cho quyền đó
+        + Dấu `+` Giữ nguyên các quyền có sẵn và thêm vào đó một số  quyền
+        + Dấu `-` Giữ nguyên các quyền có sẵn và loại bỏ một số  quyển 
+      + Tài khoản của mình sẽ thuộc nhóm other
+      + Giả sử  muốn xóa bỏ chế  độ đọc của `-rw-rw-r--` ta thực hiện : `sudo chmod o-r index.js` => Thực hiện xong ta nhấn `ls -l` để  kiểm tra quyền đã bị gỡ bỏ 
+      + Sử  dụng vim để  sửa file nhé 
+      + Để  chỉnh sửa quyền của nhiều đối tượng ta làm như sau: Ví dụ Để  Owner có full quyền, group chỉ có read và execute, và other chỉ có quyền đọc </br>
+ta làm như sau: `sudo chmod o=rwx,g=rx,o=r`, để  set cả 3 ông có quyền giống nhau thì ta chỉ cần có `a=rwx` chẳng hạn
+
+
+```js
+let myArray = [1, 2, 3, 4, 5];
+myArray.forEach((number, index) => {
+  myArray[index] = number*number;
+})
+console.log(myArray);
+```
+
+15. Lệnh `chown` (Change owner)
+- VD: `sudo chown root run.sh`: Lệnh này có nghĩa là chuyển quyền Owner cho root với file là run.sh
+- VD: `sudo chown root:root run.sh`: Lệnh này có nghĩa là chuyển quyền Owner cho root và cho cả Group với file là run.sh
+- VD: `sudo chown dat:dat run.sh`: Lệnh này có nghĩa là lấy lại quyền Owner cho root và cho cả Group với file là run.sh
+- Kiểm tra xem account của mình đang nằm trong group nào thì ta dùng: `groups`
