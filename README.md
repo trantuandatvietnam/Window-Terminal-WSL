@@ -302,3 +302,39 @@ console.log(myArray);
 - VD: `sudo chown root:root run.sh`: Lệnh này có nghĩa là chuyển quyền Owner cho root và cho cả Group với file là run.sh
 - VD: `sudo chown dat:dat run.sh`: Lệnh này có nghĩa là lấy lại quyền Owner cho root và cho cả Group với file là run.sh
 - Kiểm tra xem account của mình đang nằm trong group nào thì ta dùng: `groups`
+
+16. Lệnh `man`
+- Dùng để  tra cứu các lệnh trong Linux hoặc Ubuntu
+- Cú pháp: `man tên_lệnh_cần_tra`: VD: `man tail`
+
+17. Lệnh `wget`
+- Dùng để  tải file khi có đường link trực tiếp tải xuống (Trình tải xuống qua mạng), hỗ  trợ giao thức HTTP, HTTPS, FTP (Thường dùng qua HTTP)
+- VD: Lên mạng coppy một địa chỉ hình ảnh sau đó sử  dụng `wget địa_chỉ_hình_ảnh`
+
+18. Lệnh `apt`
+- Là một cái trình để  quản lí các thư viện, gói trên máy Ubuntu của mình
+- Khi cài gói mới hoặc nâng cấp các gói hiện có thì chúng ta sử  dụng `apt`
+- Cách nâng cấp gói hiện có đã được học từ những bài trước, nên bài này chúng ta học cách cài một gói mới
+- VD: Cài nodeJs: `sudo apt install ten_package_cai_dat` ở đây là nodeJs => `sudo apt install nodejs`
+- Muốn cái nhiều thư viện một lúc thì mỗi thư viện được cách nhau bởi dấu khoảng trắng
+- Ta biết rằng, khi cài một package thì nó sẽ hỏi xem mình có đồng ý cài không => Nếu muốn bỏ qua bước này (Nó auto đồng ý) thì thêm `-y` đằng sau cú pháp cài </br>
+  Ví dụ: `sudo apt install nodejs -y`
+- Test node: `node -v` và tạo 1 file js: `echo console.log(Math.random) index.js` rồi thử  bằng lệnh `node index.js` nhé
+
+19. Lệnh `kill`
+- Dùng để  kết thúc một tiến trình
+- Muốn xem các tiến trình đang chạy ta sử  dụng: `ps aux` 
+- Có 64 tín hiệu nhưng thường chỉ sử  dụng 2 tín hiệu sau: 
+  + SIGTERM(15): Gửi tín hiệu cho cái tiến trình đang bị đơ, nhưng nó sẽ chờ để  tiến trình đó kịp lưu thông tin tránh mất dữ liệu
+  + SIGKILL(9): Bắt tiến trình đó phải dừng ngay lập tức và có thể  không lưu được dữ liệu làm mất thông tin
+  + Để  kill một tiến trình ta sử  dụng `kill -tín_hiệu PID` để  xem PID ta gõ `ps aux` VD: `kill -9 1631` (Tắt ngay lập tức tiến trình 1631)
+
+20. Lệnh `ping`
+- Thể  hiện tốc độ kết nối đến máy chủ
+- VD: `ping google.com`
+
+21. Lệnh `uname` (Unix name): Giúp xem được thông tin kanel của hệ điều hành 
+- `uname -a` để  show tất cả thông tin của nó ra
+
+22. Lệnh `passwd` để  đổi mật khẩu cho tài khoản hiện tại
+
