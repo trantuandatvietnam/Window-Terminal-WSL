@@ -338,3 +338,33 @@ console.log(myArray);
 
 22. Lệnh `passwd` để  đổi mật khẩu cho tài khoản hiện tại
 
+23. Lệnh `top`
+- Giống như task manager trong window, giúp nhìn chi tiêt về  tiến trình, về  cpu và ram
+- Cú pháp: `top`
+- Sử  dụng `h top` thì giao diện nhìn sẽ đẹp hơn và nêu chi tiết về  tiến trình hơn
+
+24. Lênh `df`
+- Cú pháp: `man df`: Để  kiểm tra những lệnh được support 
+- Cú pháp: `df -h` Giúp kiểm tra thông tin dung lượng ổ cứng chi tiết hơn là khi chỉ sử  dụng df
+
+25. Lệnh `free`: Giúp kiểm tra dung lượng ram và swap
+- Sử  dụng `free -h` để  kiểm tra chi tiết hơn
+
+### Các mẹo khi gõ lệnh
+- Nhấn `tab` để  auto complete
+- Nhấn `ctr a/ ctr e` để  di chuyển đầu cuối
+- Gõ nhiều commands
+  + Cách 1: `command1;command2;command3` (Đối với cách này thì kể  cả khi thằng đăng trước sai thì đăng sau vẫn được chạy)
+  + Cách 2: `command1 && command2 && command3` (Đối với câu lệnh này thì thằng sau sẽ chạy khi và chỉ khi thằng trước nó chạy)
+
+### Cài đặt NodeJs trên Ubuntu
+- Lần trước đã cài đặt nodeJs rồi, tuy nhiên nó là bản cũ => Cần tải bản mới hơn
+- Xóa bản cũ: `sudo apt remove nodejs`
+- Sau khi xóa bản cũ cần chạy thêm lệnh `sudo apt autoremove`: Vì khi tải một package nào đó thì nó sẽ tự động cài thêm nhiều package khác liên quan nên muốn xóa hết nó thì cần chạy thêm lệnh trên
+- Lên google để  tìm hiểu cách cài phiên bản node mới nhất
+
+### Chạy dự án ReactJs trên Ubuntu
+- Tự tìm hiểu
+
+### Chạy dự án NodeJS trên Ubuntu
+- Tự tìm hiểu
